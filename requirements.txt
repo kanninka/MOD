@@ -1,2 +1,4 @@
 networkx>=3.0
 matplotlib>=3.7
+streamlit
+pandas
