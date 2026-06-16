@@ -1,33 +1,41 @@
-===================================================================
-  PROJET : Planification d'Examens par Coloration de Graphes
-  Niveau L2 Informatique — Théorie des Graphes
-===================================================================
+PROJET : Planification d'Examens par Coloration de Graphes
+  Niveau L2 Informatique 
+  Théorie des Graphes
 
 ORGANISATION DES FICHIERS
---------------------------
-  graphe.py       — Partie 1 : construction et visualisation du graphe
-  coloration.py   — Partie 2 : algorithmes Welsh-Powell et DSATUR
-  affectation.py  — Partie 3 : affectation des salles, audit
-  planning.py     — Partie 3 : tableau planning et export CSV
-  main.py         — Point d'entrée principal (données d'exemple incluses)
-  requirements.txt — Dépendances Python
+graphe.py       
+Partie 1 : construction et visualisation du graphe
+
+coloration.py   
+Partie 2 : algorithmes Welsh-Powell et DSATUR
+
+affectation.py  
+Partie 3 : affectation des salles, audit
+
+planning.py     
+Partie 3 : tableau planning et export CSV
+
+main.py         
+Point d'entrée principal (données d'exemple incluses)
+
+requirements.txt 
+Dépendances Python
 
 INSTALLATION DES DÉPENDANCES
------------------------------
+
   pip install -r requirements.txt
 
 LANCEMENT
----------
+
   python main.py
 
 FICHIERS GÉNÉRÉS
-----------------
-  graphe_non_colore.png  — Image du graphe de conflits brut
-  graphe_colore.png      — Image du graphe avec créneaux colorés (PNG)
+
+graphe_non_colore.png : Image du graphe de conflits brut
+graphe_colore.png  : Image du graphe avec créneaux colorés (PNG)
   planning.csv           — Planning final créneau × salle (CSV)
 
 ADAPTATION À VOS DONNÉES
---------------------------
 Modifiez les dictionnaires en haut de main.py :
 
   INSCRIPTIONS          — {code_UE: {liste étudiants}}
