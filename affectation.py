@@ -254,3 +254,31 @@ class Affectation:
         else:
             print("  Aucun avertissement. ✓")
         print("=" * 60)
+      # --- AJOUTEZ CECI À LA FIN DE affectation.py ---
+
+def affecter_salles(coloration, ues, effectifs, salles):
+    """Fonction wrapper pour correspondre à l'appel dans app.py"""
+    # 1. Conversion des données pour la classe Affectation
+    # (Adaptez les paramètres selon les besoins de votre classe Affectation)
+    ues_info = {}
+    for code, info in ues.items():
+        ues_info[code] = UEInfo(
+            code=code,
+            nb_etudiants=effectifs.get(code, 0),
+            necessite_labo=info.get("necessite_labo", False),
+            filiere=info.get("filiere", "INFO")
+        )
+    
+    # 2. Initialisation et exécution
+    aff = Affectation(salles=salles, ues_info=ues_info, nb_creneaux_par_jour=4)
+    aff.affecter(coloration)
+    return aff.affectations
+
+def generer_rapport_audit(planning, ues, salles, coloration, graphe):
+    """Fonction wrapper pour correspondre à l'appel dans app.py"""
+    # On réutilise la logique de la classe Affectation ou on en crée une nouvelle
+    # Ici, nous créons une instance temporaire pour générer l'audit
+    aff = Affectation(salles=salles, ues_info={}, nb_creneaux_par_jour=4)
+    # L'audit est basé sur l'état de l'affectation
+    return aff.rapport_audit(coloration)
+
